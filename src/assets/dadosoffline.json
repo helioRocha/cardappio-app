@@ -1,0 +1,369 @@
+{
+   "html_attributions" : [],
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.7449157,
+               "lng" : -38.5764296
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.743652919708498,
+                  "lng" : -38.5750551197085
+               },
+               "southwest" : {
+                  "lat" : -3.746350880291503,
+                  "lng" : -38.5777530802915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "e43211363a5daafe2ac630b7c6d53d43ccd65144",
+         "name" : "Cantina Trailer",
+         "place_id" : "ChIJiWx2Z9xLxwcRwI9cmpxdzVU",
+         "reference" : "CmRRAAAAD-8psFxVoA4crokZp47qH_HRf7HBXARxjOdjsbe0NJ4wFkQs9Ufbj3fYpxaET--BIddCQP5te7-2zZMPKRgi01Bs0rrh04tS4ru_0RcCc1f-xbPRGdHi6CH_b_M53vc-EhDD37q61VdBppzOh2Q1wP-TGhTq2bXq4IE1zHhaez0y7jT2cOxYWQ",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Rua Professor Armando Farias, 713 - Pici, Fortaleza"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.7447981,
+               "lng" : -38.5727821
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.743666219708498,
+                  "lng" : -38.5715409197085
+               },
+               "southwest" : {
+                  "lat" : -3.746364180291502,
+                  "lng" : -38.5742388802915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "47cec6f3792595e4e1d2993d56452446aabe970f",
+         "name" : "Restaurante Universitário",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 3006,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106196505352907221817/photos\"\u003eKébia Sucupira\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRYAAAAyVtiN1WmWrSiypr_L5FzVTRPMuTPSDkmd_YhkkkmkNrTD8oFjn40JV0k3AbJ7DWg7HUk1Ki_LSOsmEcEnneSebFc08L1doUHbE95GYncKus7OkbKvLzTSqhekMEFhskzEhAivgRtyzYEfSqAfM5aP_Y9GhQZhf3C70A_bpFOZfwOXjetp8XBkA",
+               "width" : 5344
+            }
+         ],
+         "place_id" : "ChIJmVCpx95LxwcROR7wiu0q6u4",
+         "rating" : 3.9,
+         "reference" : "CmRSAAAAuVQsZO134klChwwkMmuZ_-V1666tJyTZIH1ogXS423FG-kHmMEeKNX_cekOta9TwUaco_YEkgkSgXawRfJwfqCOS9Lsq8CumRab2c8gRe9eikYKwmOaes_coP3rx6DJMEhDaSs6W7NfsufOW7Ihg4S1JGhSUbHjzJ9pJKKbS_zebjcyIzWmIhg",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "CE"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.746796299999999,
+               "lng" : -38.57783879999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.745429419708497,
+                  "lng" : -38.5764350697085
+               },
+               "southwest" : {
+                  "lat" : -3.748127380291501,
+                  "lng" : -38.5791330302915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "0e81d6761321ba5ea5af4aa070fd55baa73bd23f",
+         "name" : "Novo Restaurante Universitário",
+         "place_id" : "ChIJ-Xd2E91LxwcRjfWJAWfsT5k",
+         "reference" : "CmRSAAAAnzjpXONKI7ZFtM5Kf_xxGI2MQDx8LrA1xFb0ubP_DWoGjWE-cwH2lCOvTXiLbArPhAgob6np9N9ZVlfqV2LGBHA2QCRyn1ypoe2hlcMt7CWwAPRyPct_eAEdLvSSHGh_EhD6fCzgMb7pC1H2jp_Dt7N9GhRA6SEuoYdN5zH8PCB5JLkPUF1daQ",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Rua Professor Armando Farias, 713 - Pici, Fortaleza"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.7470801,
+               "lng" : -38.5780279
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.745099319708497,
+                  "lng" : -38.5766033197085
+               },
+               "southwest" : {
+                  "lat" : -3.747797280291502,
+                  "lng" : -38.5793012802915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "50618122dcae9893b5d399179dbfec3da3733119",
+         "name" : "Restaurante Universitário N°2",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2340,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114040223777980972966/photos\"\u003eHelder Levi\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRYAAAA_3CZvrOkj-99WL0vbh4WfGihcnJhWMAcKxywHBH_HWRLgqhX5hSZWZd6BuL1Stbb-cnRYvXIAYZxJIneR-mcSQB8CZuBhafmtBlV7bB4l5lUBhadVqBaYhgSlqhkBAAhEhALJOh0SLZjOVGnadfXXTcEGhQIPhBgOCugZtHS1pJ7cXV7KOM-Qw",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJmbewa91LxwcRKGfPCbOZFn8",
+         "rating" : 4.1,
+         "reference" : "CmRRAAAAKxraBYo8lU5kx0xes5bShnWka5sevLYU4UT8JX5toZOHqwCuGvAOo85JulXc9-NU8Xr8we2zl36hgsYTqWW_Y4pwUKlddAqYDRl4-idIee3B-ihc9iFnPP58tRNzZJ8ZEhCu5yj2mY_AovSsUqwRet29GhTuBGb1qJAMH8WzTWxvf8wh4dHiIA",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Acesso Público, 722 - Pici, Fortaleza"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.7474668,
+               "lng" : -38.57541579999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.746117819708498,
+                  "lng" : -38.57406681970849
+               },
+               "southwest" : {
+                  "lat" : -3.748815780291503,
+                  "lng" : -38.57676478029148
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "d8e098f14024d81bf81a6699fdf58c704b57947b",
+         "name" : "Cantina da Física da UFC",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2432,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115203546981679754133/photos\"\u003eKripto Lix\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRYAAAAT4hfFQo1R_PSyuLCmZvpKWv1WwDTzjp50Qf_qD7Sc81x2pGxsLnPq0HFX6du4hQIqiIN3PN9edZF6chhIAqdxn-7ReUda6-HhW5I6RJLudTZLfXJ1xhyGdj6wb90mCZgEhC1qX-pCHNmOo96GuPPNs7OGhTdhd6cp-S5ravkTXv1gOZs6bICPg",
+               "width" : 4320
+            }
+         ],
+         "place_id" : "ChIJsaFz7d1LxwcREHcb-GuKI9I",
+         "rating" : 4.2,
+         "reference" : "CmRSAAAA2tfAWpUUIEh8oMgbf8UptU_TCbCOullzkcAsOeHhZdVslwMXu3jRzzve-t34f9Mn03JoPtbxVc4AqiG_NiptkwoPweXZaw_LYZz37YcTDZRF_JEc1Pg9kOETnWyMO05dEhBCkBkHgpkULFPW234gFENVGhRWoC4MW40lgjSoarW8SrqXutX8oA",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Rua Campus do Pici, bloco 922, Acesso Público, 923 - Pici, Fortaleza"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.7464668,
+               "lng" : -38.5768225
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.745059269708497,
+                  "lng" : -38.5757042197085
+               },
+               "southwest" : {
+                  "lat" : -3.747757230291501,
+                  "lng" : -38.5784021802915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "1aa498991a8b568051f83a8e6e099c4f8d0210de",
+         "name" : "Cantina da Química UFC",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 2448,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116959560722243202070/photos\"\u003eJoão Victor de Oliveira Pontes\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRYAAAAvOvjCmtsFf_CmLjjJy4lX3XSZS3owJoxD8MQlN2lcFH2Q0F6z9vPO65dKRQiJ_GKM9IhtX3uA_uC4V1TqFa1bOtU-8X95360q4fr7uXd9PF8AHmEA7czIHqmV1u7qGxOEhAwRq8G2-6qJtDon62pD8PRGhQRx2L19YWOh2kViLupy635xoU5GA",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJyeX6p91LxwcRxlDWFypJxCo",
+         "rating" : 4.3,
+         "reference" : "CmRRAAAALA057eVpn-08J38kH4Fq-DLM2bJhXDcip9ZGUOZ-W7emxUJm2aUtEgkAohniXhhWJVsTkdCOHXwyTnEL5bqwsFXBgSQ0UVjwlgXIN07gr-c7jGy-qTtgN9_LrdUNSyQFEhDioX7CvyIJcBfLh7XV73EwGhT5m50kYCHtyJ8GwP51awLdpV7BHA",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Acesso Público, 703"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.7477478,
+               "lng" : -38.5757856
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.746398819708497,
+                  "lng" : -38.5744366197085
+               },
+               "southwest" : {
+                  "lat" : -3.749096780291502,
+                  "lng" : -38.5771345802915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "86d24012e9d0e3393b797cf3fcc099cd7ed74a54",
+         "name" : "Cantina Da Química",
+         "place_id" : "ChIJ929jjN1LxwcROg1QiwZgkO8",
+         "rating" : 3,
+         "reference" : "CmRSAAAA8MK6kkjFwwGYQsXuLjJiiFhfmgmS68PxZ2XxNrrBzygrn0tiiB-gOilr18O37J5jYhksBM0TIGasSa6keUPvzb2nbk_mqis2KateMBTq7WbZ_NWhTHYhGq23gKkg6QWeEhDglHon-e3cSUv6bGF5baUzGhQKwpG-OqgFPV_9Yr3aRYUuCGwvHw",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Acesso Público, 932 - Pici, Fortaleza"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.745951599999999,
+               "lng" : -38.57299400000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.744579319708497,
+                  "lng" : -38.5717211697085
+               },
+               "southwest" : {
+                  "lat" : -3.747277280291502,
+                  "lng" : -38.5744191302915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "17a6fcb08043353d9e755ceee497fddf0d91612b",
+         "name" : "Lanchonete Alfa e Ômega",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "place_id" : "ChIJEZVLi95LxwcR_OrIpU2DmDg",
+         "rating" : 4.4,
+         "reference" : "CmRRAAAAIdTVFo0Oke2HNjA6t2R9x14BgumQTwFRj-_ffEfkN4BZqVAH7Pl0f6vfquSaSczBIGAppANS2JUKIxxrcVsonpLUqYKE9y91c1XO1TdKtjL6hE4cKaixBNsaxoys8RWLEhCNb5v1T2QUgcyCzf-NaHe4GhToFTw1Wy9luxeM53VVywXLggO-OA",
+         "scope" : "GOOGLE",
+         "types" : [
+            "cafe",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ],
+         "vicinity" : "Acesso Público - Pici, Fortaleza"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.7466452,
+               "lng" : -38.5730471
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.745277069708498,
+                  "lng" : -38.5716763197085
+               },
+               "southwest" : {
+                  "lat" : -3.747975030291502,
+                  "lng" : -38.5743742802915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "6afc0d2533b657b8b581d5a80f30d9cb239e749f",
+         "name" : "Cantina da Geologia",
+         "opening_hours" : {
+            "open_now" : true,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1706,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100582969366149839929/photos\"\u003eCarlos Herlanio\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRYAAAANt5mMz0d4elQPtrvo5Hy32_vsZ66phdoMGQuKWIE4QyTDJkTQrcqawtqrFLb075HjznNnstW-hWGOrNS1UuS_tWQRaDHpka-LQp-PmukuFJ9wIXaa_CbTfFwhwL-JToCEhCng4MHcT8-v8iti6fFPXoUGhQUWqK_J6onCMgsVQQyEXJdUSaCRA",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJlSrnZ95LxwcR-HxMhOWT1YQ",
+         "rating" : 4.5,
+         "reference" : "CmRSAAAAw81i4aZ-R1KerJhVV4fvlLMQX-zIVqi9ImVwwxR8qfflyOmkTYfS3p1PIo7uCMa_YT9SLV6yZ4j-aWw0JME-uXMNk6OQ_OHiFbeFIo7NIl0_Hk0pzPSKLjIs4WqqNliSEhBZue7mUOyf-hl4qXuyG4TYGhQ_CNzkFea1piPezSnRlmZdQm4ZZQ",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Bloco 912, Acesso Público - Pici, Fortaleza"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -3.749497,
+               "lng" : -38.572768
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -3.748138919708498,
+                  "lng" : -38.5714094697085
+               },
+               "southwest" : {
+                  "lat" : -3.750836880291502,
+                  "lng" : -38.5741074302915
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "318291f43c0081ab579af3e57e68d98e0cc67b1d",
+         "name" : "Doce Açaí",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 494,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103054137142642630800/photos\"\u003eDoce Açaí\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRYAAAAaJZH3m3qX5UwfyMrrPZd-XQtcjGdQ19NYHqjeqd6pUKapn5pT5xvKpjfNQOc4Rys6bkrQPr_Wc-zLlEBwOqIaqNlH4ya-RF8AG46ircR_fm_udXlXRBtpPNVXlDuHwW_EhDRDVISDkNv7emzBFkLpRkMGhQAMNaqanJrCNDScDLfSXCGw-YA0g",
+               "width" : 494
+            }
+         ],
+         "place_id" : "ChIJv2Fl6eBLxwcR1CACKXbz2vE",
+         "rating" : 5,
+         "reference" : "CmRSAAAALGJ35Kh93Wj1MpPuIeiGzKg_-4V2q6Vgk_8ROvtVqJ0_3UDyVMYGsE2hTUM3hTs0vrDv3MmSFew-R9o-hpfKwRYOfxqm7o8NoTMq449eeiGCs_wDOSfgX0FlHbTYwKW8EhDRz0tTM8aIKUOKoyqbWIsEGhSoCETIFPN70CEYWtxoS6cuVqab0A",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+         "vicinity" : "Rua Maranhão, 1810 - Pan Americano, Fortaleza"
+      }
+   ],
+   "status" : "OK"
+}
