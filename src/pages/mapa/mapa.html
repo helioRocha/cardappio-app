@@ -7,4 +7,16 @@
 <ion-content padding>
   <!--onde será carregado o conteúdo do mapa -->  
     <div #map id="map"></div>
+    <ion-fab  bottom right>
+      <button #fab ion-fab>options</button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="tracarota()">Rota</button>
+        <button ion-fab>opt2</button>
+        <button ion-fab>opt3</button>
+      </ion-fab-list>
+        <ion-fab-list side="left">
+        <button ion-fab>opt4</button>
+      </ion-fab-list>
+   </ion-fab>
+  
 </ion-content>
