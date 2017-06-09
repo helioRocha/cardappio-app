@@ -1,12 +1,12 @@
 
-#Início
+# Início
 
 Repositório para Front End do Cardappio, utilizando Ionic.
 
 Ao dar o clone, usar o comando `npm install` (sudo)
 Para rodar o ionic no browser, `ionic serve`
 
-#Testes
+# Testes
 
 Para criar testes, há uma pasta "tests" no projeto. Crie o teste no arquivo "exemplo.js"
 Ou crie um novo arquivo ".js" com seus testes.
@@ -17,7 +17,7 @@ que foi executado, o resultado do teste irá aparecer na linha de comando.
 Caso tenha algum Problema com o Karma, veja se você tem ele instalado no 'global'.
 Veja o seguindte link para ajuda. [Link](http://ericnish.io/blog/set-up-jasmine-and-karma-for-angularjs/)
 
-#Imagens da aplicação
+# Imagens da aplicação
 
 | ScreenShot        | Descrição           
 | ------------- |:-------------:
