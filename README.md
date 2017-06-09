@@ -17,6 +17,16 @@ que foi executado, o resultado do teste irá aparecer na linha de comando.
 Caso tenha algum Problema com o Karma, veja se você tem ele instalado no 'global'.
 Veja o seguindte link para ajuda. [Link](http://ericnish.io/blog/set-up-jasmine-and-karma-for-angularjs/)
 
+# QrScanner
+Atualizada página do CheckIn para funcionalidade do QrScanner, com '@ionic-native/barcode-scanner'
+documentação em : [Link](https://ionicframework.com/docs/native/barcode-scanner/)
+
+para instalar:
+
+`ionic cordova plugin add phonegap-plugin-barcodescanner`
+`npm install --save @ionic-native/barcode-scanner`
+
+
 # Imagens da aplicação
 
 | ScreenShot        | Descrição           
