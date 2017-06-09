@@ -13,7 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Network } from '@ionic-native/network';
 import { Geolocation } from '@ionic-native/geolocation';
-import {HttpModule} from '@angular/http';
+import { HttpModule} from '@angular/http';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,8 @@ import {HttpModule} from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    
     Network,
+    BarcodeScanner,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

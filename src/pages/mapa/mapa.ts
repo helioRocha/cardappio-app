@@ -65,7 +65,6 @@ export class MapaPage {
   }
   getPosition(){
     this.geolocation.getCurrentPosition().then((position) => {
-            console.log(position);
             let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             this.latUsuario = position.coords.latitude;
             this.lngUsuario = position.coords.longitude
@@ -149,12 +148,10 @@ export class MapaPage {
             let latDest = this.estabelecimentos[this.keyEstAtivo].dados.getLat();
             let lngDest = this.estabelecimentos[this.keyEstAtivo].dados.getLng();
             let nome = this.estabelecimentos[this.keyEstAtivo].dados.getNome();
-            console.log("Traçar rota para : " + latDest);
             let label = encodeURI(nome.toString()); // encode the label!
             window.open('geo:'+ latDest +', ' + lngDest +'?q='+ latDest +', ' + lngDest + '(' + label + ')', '_system');
             
         }else{
-            console.log("Não foi selecionado um estabelecimento");
             this.showAlertNoSelect();
         }
      }
@@ -192,14 +189,12 @@ export class MapaPage {
         {
           text: 'Sair',
           handler: () => {
-            console.log('Sair clicado');
             /* fchar o app */
           }
         },
         {
           text: 'Ativar',
           handler: () => {
-            console.log('Ativr clicado');
             /* Abrir configuração de rede */
           }
         }
