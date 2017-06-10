@@ -116,13 +116,18 @@ export class MapaPage {
                                 estab.dados.setLat(snapshot.val().localizacao.latitude);
                                 estab.dados.setLng(snapshot.val().localizacao.longitude);
                                 this.estabelecimentos.push(estab);
+                                this.listamesas(snapshot.val().Mesas);
                             });
-                });
-            console.log(this.estabelecimentos);
-            this.addMarker();
+                this.addMarker();  
+                console.log(this.estabelecimentos);  
+            });
+            
+            
                     
     }
-   
+  listamesas(mesas: any){
+      console.log(mesas);
+  } 
   addMarker(){
       
       this.estabelecimentos.forEach((estab, index) => {
@@ -159,12 +164,12 @@ export class MapaPage {
     }
 
      tracarota(){
-        if(this.keyEstAtivo){ // gambiarra feiona, tem que consertar mas não consegui um geito ainda
+        if(this.keyEstAtivo !== null && this.keyEstAtivo !== undefined){ // gambiarra feiona, tem que consertar mas não consegui um geito ainda
             let latDest = this.estabelecimentos[this.keyEstAtivo].dados.getLat();
             let lngDest = this.estabelecimentos[this.keyEstAtivo].dados.getLng();
             let nome = this.estabelecimentos[this.keyEstAtivo].dados.getNome();
             let label = encodeURI(nome.toString()); // encode the label!
-            window.open('geo:'+ latDest +', ' + lngDest +'?q='+ latDest +', ' + lngDest + '(' + label + ')', '_system');
+            window.open('geo:'+ latDest +', ' + lngDest +'?q='+ latDest +', ' + lngDest + '(' + label + ')', '_system'); // só android
             
         }else{
             this.showAlertNoSelect();

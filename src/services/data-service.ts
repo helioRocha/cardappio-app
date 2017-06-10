@@ -22,5 +22,6 @@ export class DataService {
     getEstabelecimentos(){
         return this.db.list('/estabelecimentos', { preserveSnapshot: true });
     }
+    
 
 }
