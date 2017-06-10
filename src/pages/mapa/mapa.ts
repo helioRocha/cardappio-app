@@ -2,9 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Network } from '@ionic-native/network';
-import { Estabelecimento } from './estabelecimento';
+import { Estabelecimento } from '../../classes/estabelecimento';
+import { Rede } from '../../classes/Rede';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { DataService } from '../../services/data-service';
 
 
 declare var google;
@@ -20,6 +22,7 @@ export class MapaPage {
   icone = 'navigation';
   private map: any;
   private estabelecimentos: Estabelecimento[];
+  private redes: Rede[];
   keyEstAtivo: any;
   infowindow : any;
   marker: any;
@@ -32,7 +35,8 @@ export class MapaPage {
     public alertCtrl: AlertController,
     public geolocation: Geolocation, 
     public network: Network, 
-    public http: Http) {
+    public http: Http,
+    private db: DataService) {
       this.estabelecimentos = [];
       this.infowindow = [];
       this.marker = [];
@@ -90,29 +94,39 @@ export class MapaPage {
           */
           //let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + this.latUsuario +","+this.lngUsuario + "&radius="+ raio +"&type=restaurant&key=AIzaSyDLLDf1LsT8QVU1YHTER1fc7RCAarqVmVI";
           // local
-          let url = "assets/dadosoffline.json";
+          // let url = "assets/dadosoffline.json";
           
-          this.http.get(url).map(res => res.json()).subscribe(data => {
-            let counter = 0;
-            for (let key in data.results) {
-                this.estabelecimentos.push(new Estabelecimento());
-                this.estabelecimentos[counter].dados.setNome(data.results[key].name);
-                let newlat = data.results[key].geometry.location.lat;
-                let newlng = data.results[key].geometry.location.lng;
-                this.estabelecimentos[counter].dados.setLat(newlat);
-                this.estabelecimentos[counter].dados.setLng(newlng);
-                counter++;
-            }
+          // this.http.get(url).map(res => res.json()).subscribe(data => {
+          //   let counter = 0;
+          //   for (let key in data.results) {
+          //       this.estabelecimentos.push(new Estabelecimento());
+          //       this.estabelecimentos[counter].dados.setNome(data.results[key].name);
+          //       let newlat = data.results[key].geometry.location.lat;
+          //       let newlng = data.results[key].geometry.location.lng;
+          //       this.estabelecimentos[counter].dados.setLat(newlat);
+          //       this.estabelecimentos[counter].dados.setLng(newlng);
+          //       counter++;
+          //   }
+            this.db.getEstabelecimentos()
+                .subscribe(snapshots => {
+                  snapshots.forEach(snapshot => {
+                                let estab = new Estabelecimento();
+                                estab.setId(snapshot.key);
+                                estab.dados.setNome(snapshot.val().nome);
+                                estab.dados.setLat(snapshot.val().localizacao.latitude);
+                                estab.dados.setLng(snapshot.val().localizacao.longitude);
+                                this.estabelecimentos.push(estab);
+                            });
+                });
+            console.log(this.estabelecimentos);
             this.addMarker();
-            
-        });
-        
+                    
     }
    
   addMarker(){
-        
-      for (let key in this.estabelecimentos) {
-        let latLng = new google.maps.LatLng(this.estabelecimentos[key].dados.getLat(), this.estabelecimentos[key].dados.getLng());
+      
+      this.estabelecimentos.forEach((estab, index) => {
+        let latLng = new google.maps.LatLng(estab.dados.getLat(), estab.dados.getLng());
         let tmpmarker = new google.maps.Marker({
           map: this.map,
           icon: 'assets/icon/cardappio.png',
@@ -120,27 +134,28 @@ export class MapaPage {
           position: latLng
         });
         this.marker.push(tmpmarker);
-       
-       /*
+
+        /*
         ver uma forma de usar template para o infowindow depois
         */
-        let desc = this.estabelecimentos[key].dados.getNome();
-        let dist = this.calcdist(this.latUsuario, this.lngUsuario, this.estabelecimentos[key].dados.getLat(), this.estabelecimentos[key].dados.getLng());
+        let desc = estab.dados.getNome();
+        let dist = this.calcdist(this.latUsuario, this.lngUsuario, estab.dados.getLat(), estab.dados.getLng());
         let content =   "<div id=\"infowindow\"><h3>" + 
                         desc + 
                         "<br></h3>À " + 
                         dist + 
-                        " metros<div id=\"ifowindowsbuttons\"><img src=\"assets/icon/cardappio.png\"></div></div>";          
+                        " metros<div id=\"ifowindowsbuttons\"><img src=\"assets/icon/cardappio.png\"></div></div>";       
+               
         let tmpinfowindow = new google.maps.InfoWindow({
             content: content
         })
         this.infowindow.push(tmpinfowindow);
-        google.maps.event.addListener(this.marker[key], 'click', () => {
-            this.infowindow[key].open(this.map, this.marker[key]);
-            this.keyEstAtivo = key;
+        google.maps.event.addListener(this.marker[index], 'click', () => {
+            this.infowindow[index].open(this.map, this.marker[index]);
+            this.keyEstAtivo = index;
         });
         
-      }
+      });
     }
 
      tracarota(){

@@ -9,12 +9,28 @@ import { CheckinPage } from '../pages/checkin/checkin';
 import { MapaPage } from '../pages/mapa/mapa';
 import { TabsPage } from '../pages/tabs/tabs';
 
+// Import the AF2 Modules
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+//Services
+import { DataService } from '../services/data-service';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Network } from '@ionic-native/network';
 import { Geolocation } from '@ionic-native/geolocation';
 import { HttpModule} from '@angular/http';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyCcAlOaliIlgSVnz-KoUkZOG9xbRybpqX4",
+  authDomain: "cardappio-60ff4.firebaseapp.com",
+  databaseURL: "https://cardappio-60ff4.firebaseio.com",
+  storageBucket: "cardappio-60ff4.appspot.com",
+  messagingSenderId: "586001503807"
+};
 
 @NgModule({
   declarations: [
@@ -28,7 +44,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    SuperTabsModule.forRoot()
+    SuperTabsModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,6 +61,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     Network,
     BarcodeScanner,
+    DataService,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
