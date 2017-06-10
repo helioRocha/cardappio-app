@@ -4,7 +4,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class DataService {
     db: AngularFireDatabase;
-
+    mesas: FirebaseListObservable<any>;
     constructor(dB: AngularFireDatabase) {
         this.db = dB;
     }
@@ -22,6 +22,26 @@ export class DataService {
     getEstabelecimentos(){
         return this.db.list('/estabelecimentos', { preserveSnapshot: true });
     }
+    /*
+    * adiciona uma mesa a um estabelecimento
+    */
+    addMesa(numero:string, idestab: string){
+        this.mesas = this.db.list('/estabelecimentos/'+idestab+'/mesas');
+        this.mesas.push({
+            numero: numero,
+            status: "livre"
+         });
+    }
+    /*
+    * Atualizar status de uma mesa
+    */
+    updateMesa(idestab: string, idmesa: string, status: string){
+        this.mesas = this.db.list('/estabelecimentos/'+idestab+'/mesas');
+        this.mesas.update(idmesa, {
+            status: status
+        });
+    }
+
     
 
 }

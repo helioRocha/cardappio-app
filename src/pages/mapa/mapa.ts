@@ -119,7 +119,6 @@ export class MapaPage {
                                 this.listamesas(snapshot.val().Mesas);
                             });
                 this.addMarker();  
-                console.log(this.estabelecimentos);  
             });
             
             
@@ -175,29 +174,7 @@ export class MapaPage {
             this.showAlertNoSelect();
         }
      }
-     /* ==================================
-            funções auxiliares
-    =====================================*/
-
-    degreesToRadians(degrees) {
-      return degrees * Math.PI / 180;
-    }
-
-    calcdist(lat1, lng1, lat2, lng2) {
-      var earthRadiusKm = 6371;
-
-      var dLat = this.degreesToRadians(lat2-lat1);
-      var dLng = this.degreesToRadians(lng2-lng1);
-
-      lat1 = this.degreesToRadians(lat1);
-      lat2 = this.degreesToRadians(lat2);
-
-      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-              Math.sin(dLng/2) * Math.sin(dLng/2) * Math.cos(lat1) * Math.cos(lat2); 
-      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-      // retorno em metros
-      return (earthRadiusKm * c * 1000).toFixed(0);
-    }
+    
     /*
   TODO: Separar em uma classe, pois deve ser usado em vários locais
   */
@@ -236,4 +213,66 @@ export class MapaPage {
     });
     confirm.present(); 
   }
+
+  /*
+    funcões de CRUD apenas para popular o banco, se for possível aproveitar depois, tem que mudar daqui
+  */
+  addMesa(){
+  if(this.keyEstAtivo !== null && this.keyEstAtivo !== undefined){
+      let idestab = this.estabelecimentos[this.keyEstAtivo].getId();
+      let prompt = this.alertCtrl.create({
+        title: 'Numero da mesa',
+        message: "insira o numero da mesa",
+        inputs: [
+          {
+            name: 'numero',
+            placeholder: 'Numero'
+          },
+        ],
+        buttons: [
+          {
+            text: 'Cancelar',
+            handler: data => {
+              console.log('Cancelado');
+            }
+          },
+          {
+            text: 'Save',
+            handler: data => {
+              this.db.addMesa(data.numero, idestab);
+            }
+          }
+        ]
+      });
+      prompt.present();
+  }else{
+      this.showAlertNoSelect();
+      
+  }
+  
+}
+
+/* ==================================
+            funções auxiliares
+    =====================================*/
+
+    degreesToRadians(degrees) {
+      return degrees * Math.PI / 180;
+    }
+
+    calcdist(lat1, lng1, lat2, lng2) {
+      var earthRadiusKm = 6371;
+
+      var dLat = this.degreesToRadians(lat2-lat1);
+      var dLng = this.degreesToRadians(lng2-lng1);
+
+      lat1 = this.degreesToRadians(lat1);
+      lat2 = this.degreesToRadians(lat2);
+
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.sin(dLng/2) * Math.sin(dLng/2) * Math.cos(lat1) * Math.cos(lat2); 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      // retorno em metros
+      return (earthRadiusKm * c * 1000).toFixed(0);
+    }
 }
