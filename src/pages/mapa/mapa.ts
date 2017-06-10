@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 import { DataService } from '../../services/data-service';
 
 
+
 declare var google;
 @Component({
   selector: 'page-mapa',
