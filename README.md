@@ -26,6 +26,11 @@ para instalar:
 `ionic cordova plugin add phonegap-plugin-barcodescanner`
 `npm install --save @ionic-native/barcode-scanner`
 
+# fire base
+pode ser preciso instalar :
+`npm install promise-polyfill --save-exact`
+`npm install angularfire2 firebase —save`
+
 
 # Imagens da aplicação
 
