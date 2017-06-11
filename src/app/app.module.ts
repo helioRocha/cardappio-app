@@ -4,10 +4,13 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 
-import { FavoritosPage } from '../pages/favoritos/favoritos';
+// Pages
 import { CheckinPage } from '../pages/checkin/checkin';
-import { MapaPage } from '../pages/mapa/mapa';
 import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
+import { EstabelecimentosPage } from '../pages/estabelecimentos/estabelecimentos';
+import { MapaView } from '../pages/estabelecimentos/mapa';
+import { ListaView } from '../pages/estabelecimentos/lista';
 
 // Import the AF2 Modules
 import { AngularFireModule } from 'angularfire2';
@@ -35,10 +38,12 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    FavoritosPage,
     CheckinPage,
-    MapaPage,
-    TabsPage
+    TabsPage,
+    HomePage,
+    EstabelecimentosPage,
+    MapaView,
+    ListaView
   ],
   imports: [
     BrowserModule,
@@ -51,10 +56,12 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    FavoritosPage,
     CheckinPage,
-    MapaPage,
-    TabsPage
+    TabsPage,
+    HomePage,
+    EstabelecimentosPage,
+    MapaView,
+    ListaView
   ],
   providers: [
     StatusBar,

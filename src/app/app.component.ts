@@ -4,9 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { FavoritosPage } from '../pages/favoritos/favoritos';
-import { CheckinPage } from '../pages/checkin/checkin';
-import { MapaPage } from '../pages/mapa/mapa';
 
 @Component({
   templateUrl: 'app.html'
