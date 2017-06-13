@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { DataService } from '../../services/data-service';
+import { Estabelecimento } from '../../classes/estabelecimento';
 
 @Component({
   selector: 'page-checkin',
@@ -9,13 +11,18 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 export class CheckinPage {
   titulo = 'Check-In';
   icone = 'qr-scanner';
-  public myImage: string;
+  public myImage: string[];
+  private estabelecimentos: Estabelecimento[];
 
-  constructor(public navCtrl: NavController, public bcScan: BarcodeScanner, public alertCtrl: AlertController) {
-
+  constructor(public navCtrl: NavController, 
+  public bcScan: BarcodeScanner, 
+  private db: DataService,
+  public alertCtrl: AlertController) {
+      this.myImage = []; 
+      this.estabelecimentos = [];
   }
   ionViewDidLoad(){
-    this.lerqrcode();
+    this.lerqrcode(true);
     
   }
 
@@ -24,21 +31,29 @@ export class CheckinPage {
   verificar a compatibilidade com os ddos retornados do firebase
   */
 
-  lerqrcode(){
+  lerqrcode(checkin:boolean){
       let dados: any;
         this.bcScan.scan().then((barcodeData) => {
             dados = barcodeData.text;
             // criar teste para checar a integridade dos dados antes de enviar para o checkin
-            this.checkin(dados.split("_")[0], dados.split("_")[1]);
+            if(checkin){
+              this.checkin(dados.split("_")[0], dados.split("_")[1]);
+            }else{
+              this.checkout(dados.split("_")[0], dados.split("_")[1]);
+            }
         }, (err) => {
             console.log("Erro: " + err);
         });
   }
   checkin(estab: string, mesa: string){
     this.showAlert(estab, mesa); // debug apenas
+    this.db.updateMesa(estab, mesa, "aguardando");
     // TODO: enviar dados para o servidor
     // TODO: solicitar aprovacao do gerente
     
+  }
+  checkout(estab: string, mesa: string){
+    this.db.updateMesa(estab, mesa, "livre");
   }
   
   /*
@@ -47,7 +62,7 @@ export class CheckinPage {
   showAlert(estab: string, mesa: string) {
     let confirm = this.alertCtrl.create({
         title: 'CheckIn',
-        message: 'Estabelecimento: ' + estab + ' , Mesa: ' + mesa,
+        message: 'Efetuando CheckIn na mesa ' + mesa + ' do ' + estab,
         buttons: [
           {
             text: 'OK',
@@ -66,9 +81,25 @@ export class CheckinPage {
   modulo do administrador
   */
   qrcodegen(){
-  
-   this.myImage = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=1001_1002"/>';
+   this.db.getEstabelecimentos()
+                .subscribe(snapshots => {
+                  snapshots.forEach(data => {
+                  let mesas = data.val().mesas; 
 
+                  for(let key in mesas){
+                      let mesa = data.val().mesas[key];
+                      let cor: string;
+                      if(mesa.status === "livre"){
+                          cor = "000000";
+                      }else{
+                          cor = "0000ff";
+                      }
+                      this.myImage.push('https://api.qrserver.com/v1/create-qr-code/?size=150x150&color='+cor+'&data='+data.key+'_'+key);
+                  }
+                  
+               });
+            });
+   
   }
 
 }
