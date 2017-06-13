@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { DataService } from '../../services/data-service';
+import { Estabelecimento } from '../../classes/estabelecimento';
 
 @Component({
   selector: 'page-checkin',
@@ -11,12 +12,14 @@ export class CheckinPage {
   titulo = 'Check-In';
   icone = 'qr-scanner';
   public myImage: string[];
+  private estabelecimentos: Estabelecimento[];
 
   constructor(public navCtrl: NavController, 
   public bcScan: BarcodeScanner, 
   private db: DataService,
   public alertCtrl: AlertController) {
       this.myImage = []; 
+      this.estabelecimentos = [];
   }
   ionViewDidLoad(){
     this.lerqrcode(true);
@@ -43,7 +46,7 @@ export class CheckinPage {
         });
   }
   checkin(estab: string, mesa: string){
-    //this.showAlert(estab, mesa); // debug apenas
+    this.showAlert(estab, mesa); // debug apenas
     this.db.updateMesa(estab, mesa, "aguardando");
     // TODO: enviar dados para o servidor
     // TODO: solicitar aprovacao do gerente
@@ -59,7 +62,7 @@ export class CheckinPage {
   showAlert(estab: string, mesa: string) {
     let confirm = this.alertCtrl.create({
         title: 'CheckIn',
-        message: 'Estabelecimento: ' + estab + ' , Mesa: ' + mesa,
+        message: 'Efetuando CheckIn na mesa ' + mesa + ' do ' + estab,
         buttons: [
           {
             text: 'OK',
@@ -87,9 +90,9 @@ export class CheckinPage {
                       let mesa = data.val().mesas[key];
                       let cor: string;
                       if(mesa.status === "livre"){
-                          cor = "0000ff";
-                      }else{
                           cor = "000000";
+                      }else{
+                          cor = "0000ff";
                       }
                       this.myImage.push('https://api.qrserver.com/v1/create-qr-code/?size=150x150&color='+cor+'&data='+data.key+'_'+key);
                   }
