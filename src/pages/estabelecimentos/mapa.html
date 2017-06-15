@@ -1,0 +1,31 @@
+<ion-content>
+  <!--onde será carregado o conteúdo do mapa -->  
+  <div #map id="map"></div>
+  <div class="map-search">
+    <ion-searchbar
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)"
+      placeholder="Pesquisar">
+    </ion-searchbar>
+  </div>
+
+  <ion-fab bottom right>
+    <button #fab ion-fab color=secondary>options</button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="tracarota()">Rota</button>
+      <button ion-fab>opt2</button>
+      <button ion-fab>opt3</button>
+    </ion-fab-list>
+      <ion-fab-list side="left">
+      <button ion-fab>opt4</button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-fab bottom left>
+    <button #fab ion-fab color=secondary (click)="getPosition()">
+      <ion-icon name="locate"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
