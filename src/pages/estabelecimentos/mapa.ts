@@ -25,6 +25,7 @@ export class MapaView {
   marker: any;
   latUsuario: any;  // para receber a posição do usuário (latitude)
   lngUsuario: any;  // para receber a posição do usuário (longitude)
+  private limitelista = 10;
   private connectionStatus: boolean = true;
 
   constructor(public navCtrl: NavController, 
@@ -103,21 +104,29 @@ export class MapaView {
       let raio = 500;
 
       //TODO: Fazer consulta com LIMIT, para prevenir overflow quando houver muitos estabelecimentos
-      this.db.getEstabelecimentos()
-          .subscribe(snapshots => {
-            snapshots.forEach(snapshot => {
-                          let estab = new Estabelecimento();
-                          estab.setId(snapshot.key);
-                          estab.dados.setNome(snapshot.val().nome);
-                          estab.dados.setLat(snapshot.val().localizacao.latitude);
-                          estab.dados.setLng(snapshot.val().localizacao.longitude);
-                          this.estabelecimentos.push(estab);
-                      });
-
-                      // Adiciona marcadores ao mapa para cada estabelecimento
-                      this.addMarker();
+      this.db.setLimit(30); // tem que testar se funiona esse método, porque ainda tem poucos itens
+      this.db.getRedes().subscribe(redes => {
+          redes.forEach(rede => {
+            this.db.getEstabelecimentos(rede.key).subscribe(stabs => {
+              stabs.forEach(stab => {
+                  let tmpestab = new Estabelecimento();
+                  tmpestab.setId(stab.key);
+                  tmpestab.dados.setNome(stab.val().nome);
+                  tmpestab.dados.setEstado(stab.val().estado);
+                  tmpestab.dados.setCidade(stab.val().cidade);
+                  tmpestab.dados.setBairro(stab.val().bairro);
+                  tmpestab.dados.setLogradouro(stab.val().logradouro);
+                  tmpestab.dados.setNumero(stab.val().numero);
+                  tmpestab.dados.setHorarioFuncionamento(stab.val().horario_funcionamento);
+                  tmpestab.dados.setLat(stab.val().latitude);
+                  tmpestab.dados.setLng(stab.val().longitude);
+                  this.estabelecimentos.push(tmpestab);
+              });  
+            this.addMarker();
+            });
           });
-                  
+      
+      });
   }
   
   // Adiciona marcadores ao mapa para cada estabelecimento
@@ -134,12 +143,16 @@ export class MapaView {
 
       /* TODO: ver uma forma de usar template para o infowindow depois */
       let desc = estab.dados.getNome();
+      console.log("Geos: " + this.latUsuario + "/" + this.lngUsuario +"/"+ estab.dados.getLat() +"/"+ estab.dados.getLng());
       let dist = this.calcdist(this.latUsuario, this.lngUsuario, estab.dados.getLat(), estab.dados.getLng());
       let content =   "<div id=\"infowindow\"><h3>" + 
                       desc + 
                       "<br></h3>À " + 
                       dist + 
-                      " metros<div id=\"ifowindowsbuttons\"><img src=\"assets/icon/cardappio.png\"></div></div>";       
+                      " metros<div id=\"ifowindowsbuttons\"><img src=\"assets/icon/cardappio.png\">" +
+                      "<br> Funcionamento: " + 
+                      estab.dados.getHorarioFuncionamento() + 
+                      "</div></div>";       
               
       let tmpinfowindow = new google.maps.InfoWindow({
           content: content
@@ -155,7 +168,7 @@ export class MapaView {
   }
 
   tracarota(){
-    if(this.keyEstAtivo){ // gambiarra feiona, tem que consertar mas não consegui um jeito ainda
+    if(this.keyEstAtivo > -1){ // gambiarra feiona, tem que consertar mas não consegui um jeito ainda
         let latDest = this.estabelecimentos[this.keyEstAtivo].dados.getLat();
         let lngDest = this.estabelecimentos[this.keyEstAtivo].dados.getLng();
         let nome = this.estabelecimentos[this.keyEstAtivo].dados.getNome();

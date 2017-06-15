@@ -81,25 +81,28 @@ export class CheckinPage {
   modulo do administrador
   */
   qrcodegen(){
-   this.db.getEstabelecimentos()
-                .subscribe(snapshots => {
-                  snapshots.forEach(data => {
-                  let mesas = data.val().mesas; 
+   this.db.setLimit(6);
+   this.db.getRedes().subscribe(redes => {
+          redes.forEach(rede => {
+            this.db.getEstabelecimentos(rede.key).subscribe(stabs => {
+              stabs.forEach(stab => {
+                  let mesas = stab.val().mesas; 
 
                   for(let key in mesas){
-                      let mesa = data.val().mesas[key];
+                      let mesa = stab.val().mesas[key];
                       let cor: string;
                       if(mesa.status === "livre"){
                           cor = "000000";
                       }else{
                           cor = "0000ff";
                       }
-                      this.myImage.push('https://api.qrserver.com/v1/create-qr-code/?size=150x150&color='+cor+'&data='+data.key+'_'+key);
+                      this.myImage.push('https://api.qrserver.com/v1/create-qr-code/?size=150x150&color='+cor+'&data='+stab.key+'_'+key);
                   }
-                  
-               });
+              });
             });
-   
+          });
+   });
+ 
   }
 
 }
