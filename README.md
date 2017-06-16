@@ -4,6 +4,7 @@
 Repositório para Front End do Cardappio, utilizando Ionic.
 
 Ao dar o clone, usar o comando `npm install` (sudo)
+
 Para rodar o ionic no browser, `ionic serve`
 
 # Testes
@@ -24,6 +25,7 @@ documentação em : [Link](https://ionicframework.com/docs/native/barcode-scanne
 para instalar:
 
 `ionic cordova plugin add phonegap-plugin-barcodescanner`
+
 `npm install --save @ionic-native/barcode-scanner`
 
 # fire base
