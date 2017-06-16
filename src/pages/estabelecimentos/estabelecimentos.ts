@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { MapaView } from './mapa';
 import { ListaView } from './lista';
@@ -12,10 +13,11 @@ export class EstabelecimentosPage {
 
   mapaView = MapaView;
   listaView = ListaView;
-  estabelecimentos: string;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
-    this.estabelecimentos = "'mapa'";
+  
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public db: AngularFireDatabase) {
+    
   }
+
 
 }
