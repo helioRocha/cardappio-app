@@ -1,7 +1,7 @@
 
 # Início
 
-Repositório para Front End do Cardappio, utilizando Ionic.
+Repositório para Front End do Cardappio, desenvolvido em Ionic.
 
 Ao dar o clone, usar o comando `npm install` (sudo)
 
