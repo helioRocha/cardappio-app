@@ -31,6 +31,7 @@ para instalar:
 # fire base
 pode ser preciso instalar :
 `npm install promise-polyfill --save-exact`
+
 `npm install angularfire2 firebase —save`
 
 
