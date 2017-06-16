@@ -27,12 +27,27 @@ export class DataService {
     }
 
     /*
-    * Retorna todos os Estabelecimentos.
+    * Retorna os estabelecimentos de uma rede.
     */
     getEstabelecimentos(idrede: string){
         return this.db.list('/estabelecimentos/'+idrede, { preserveSnapshot: true });
     }
-   
+    
+    /*
+    * Retorna um estabelecimento.
+    */
+    getEstabelecimento(idestab: string){
+        return this.db.object('/estabelecimentos/'+idestab , { preserveSnapshot: true});
+    }
+    /*
+    * Retorna as mesas de um estabelecimento
+    */
+    getMesas(idestab: string){
+        return this.db.list('/mesas/'+idestab, { preserveSnapshot: true ,
+            query: {
+                limitToFirst: this.limitlista // limitação da lista
+            }});
+    }
     /*
     * adiciona uma mesa a um estabelecimento
     */
