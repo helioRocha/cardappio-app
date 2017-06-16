@@ -13,11 +13,14 @@ export class ListaView {
 
   estabelecimentos: FirebaseListObservable<any[]>;  
   estabArray: Array<any>;
+  originalEstabArray: Array<any>;
 
   constructor(public navCtrl: NavController,  public db: AngularFireDatabase) {
     this.estabelecimentos = db.list('/estabelecimentos');
     this.estabArray = new Array;
+    this.originalEstabArray = new Array;
     this.iniciarEstabelecimentos();
+    this.estabArray = this.originalEstabArray;
   }
 
   iniciarEstabelecimentos(){
@@ -25,7 +28,7 @@ export class ListaView {
       snapshot.forEach(redes => {
         this.getDB('/estabelecimentos/'+redes.key).subscribe(estabelecimento =>{
           estabelecimento.forEach(dados => {
-            this.estabArray.push(dados);
+            this.originalEstabArray.push(dados);
           });
         });
       });
@@ -41,6 +44,20 @@ export class ListaView {
   }
 
   pesquisar(nome){
+    let term: string = nome.target.value || '';
+    console.log(term);
+    if (term.trim() === '' || term.trim().length < 3){
+      this.estabArray = this.originalEstabArray;
+    }else{
+      this.estabArray = [];
+      this.originalEstabArray.forEach(element => {
+          let aux: string = element.val().nome;
+          if( aux.toLowerCase().includes(term.toLowerCase())){
+            this.estabArray.push(element);
+           }
+      });
+
+    }
 
   }
 
