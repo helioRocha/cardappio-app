@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{estabelecimento.val().nome}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+<ion-card>
+
+    <img [src]="estabelecimento.val().imgURL" id ="imgCardapioEst" />
+
+    <ion-card-content>
+      <ion-card-title>
+        {{estabelecimento.val().nome}}
+      </ion-card-title> 
+      <p>{{estabelecimento.val().tipo}}</p>
+      <p> Tel.:{{estabelecimento.val().telefone}}</p>
+    </ion-card-content>
+
+  </ion-card>
+<div class="scrollbar" id="style-1">
+  <ion-list>
+  <ion-item *ngFor="let produto of produtosArray" >
+    <ion-thumbnail item-start>
+      <img [src]="produto.val().imagemURL">
+    </ion-thumbnail>
+    <h2>{{produto.val().nome}}</h2>
+    <p>{{produto.val().descricao}}</p>
+    <button ion-button clear item-end>R${{produto.val().preco}}</button>
+  </ion-item>
+</ion-list>
+</div>
+

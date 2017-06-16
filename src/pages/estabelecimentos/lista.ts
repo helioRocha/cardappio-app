@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { DataService } from '../../services/data-service';
+import { EstabelecimentoDetails } from '../estabelecimento-details/estabelecimento-details';
 
 @Component({
   selector: 'view-lista',
@@ -33,6 +34,10 @@ export class ListaView {
 
   getDB(url: string): FirebaseListObservable<any>{
     return this.db.list(url, {preserveSnapshot: true});
+  }
+
+  showOptions(estabelecimento, estabKey){
+    this.navCtrl.push(EstabelecimentoDetails, {estabelecimento, estabKey});
   }
 
   pesquisar(nome){

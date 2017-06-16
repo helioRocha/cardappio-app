@@ -2,16 +2,12 @@
 
   <ion-searchbar placeholder="Pesquise..." (ionInput)="pesquisar($event)"></ion-searchbar>
 
-  <!-- LISTA DOS ITEMS QUE ESTÃO NO FIREBASE-->
   <ion-list>
-    <!-- (click)="showOptions(item, item.cardapios.cardapio1)" -->
     <ion-item *ngFor="let estabelecimento of estabArray" (click)="showOptions(estabelecimento, estabelecimento.key)" >
       <ion-avatar item-start>
         <img [src]="estabelecimento.val().imgURL">
       </ion-avatar>
       <h2>{{estabelecimento.val().nome}}</h2>
-       <!-- <h2>{{item.dados.nome}}</h2>
-        <p>{{item.dados.rua}}, {{item.dados.numero}} - {{item.dados.bairro}}</p> -->
         <p>{{estabelecimento.val().logradouro}}, {{estabelecimento.val().numero}} - {{estabelecimento.val().bairro}}</p>
     </ion-item>
   </ion-list>

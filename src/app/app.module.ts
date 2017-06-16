@@ -9,6 +9,7 @@ import { CheckinPage } from '../pages/checkin/checkin';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { EstabelecimentosPage } from '../pages/estabelecimentos/estabelecimentos';
+import { EstabelecimentoDetails } from '../pages/estabelecimento-details/estabelecimento-details';
 import { MapaView } from '../pages/estabelecimentos/mapa';
 import { ListaView } from '../pages/estabelecimentos/lista';
 
@@ -41,6 +42,7 @@ export const firebaseConfig = {
     CheckinPage,
     TabsPage,
     HomePage,
+    EstabelecimentoDetails,
     EstabelecimentosPage,
     MapaView,
     ListaView
@@ -59,6 +61,7 @@ export const firebaseConfig = {
     CheckinPage,
     TabsPage,
     HomePage,
+    EstabelecimentoDetails,
     EstabelecimentosPage,
     MapaView,
     ListaView
