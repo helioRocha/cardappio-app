@@ -29,7 +29,8 @@ para instalar:
 `npm install --save @ionic-native/barcode-scanner`
 
 # fire base
-pode ser preciso instalar :
+pode ser preciso instalar:
+
 `npm install promise-polyfill --save-exact`
 
 `npm install angularfire2 firebase —save`
